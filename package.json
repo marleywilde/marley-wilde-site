@@ -1,0 +1,6 @@
+{
+  "name": "marley-wilde-site",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" }
+}
