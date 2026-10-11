@@ -246,6 +246,13 @@
     .hero { aspect-ratio: 4 / 5; }
     .gallery { gap: 8px; }
   }
+
+  /* Gallery + portrait photos (replace placeholder gradients) */
+  .tile { margin: 0; padding: 0; }
+  .tile::before { display: none; }
+  .tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .portrait { position: relative; overflow: hidden; padding: 0; }
+  .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 30%; }
 </style>
 </head>
 <body>
@@ -324,12 +331,14 @@
     <div class="wrap">
       <div class="sec-head"><h2>Photo</h2><span class="eyebrow">Headshots · Editorial · Commercial</span></div>
       <div class="gallery">
-        <div class="tile"><span>Theatrical headshot</span></div>
-        <div class="tile"><span>Commercial headshot</span></div>
-        <div class="tile"><span>Full length</span></div>
-        <div class="tile"><span>Editorial</span></div>
-        <div class="tile"><span>Swim / lifestyle</span></div>
-        <div class="tile"><span>Behind the scenes</span></div>
+        <figure class="tile"><img src="images/gallery/black_shirt.jpeg" alt="Marley Wilde in a black shirt" loading="lazy"></figure>
+        <figure class="tile"><img src="images/gallery/butt_mirror.jpeg" alt="Mirror photo of Marley Wilde" loading="lazy"></figure>
+        <figure class="tile"><img src="images/gallery/mirror_shot1.JPG" alt="Full-length photo of Marley Wilde" loading="lazy"></figure>
+        <figure class="tile"><img src="images/gallery/mirrorshot.JPG" alt="Editorial photo of Marley Wilde" loading="lazy"></figure>
+        <figure class="tile"><img src="images/gallery/red_corset.jpeg" alt="Marley Wilde in a red corset" loading="lazy"></figure>
+        <figure class="tile"><img src="images/gallery/swimsuit.JPG" alt="Marley Wilde in a swimsuit" loading="lazy"></figure>
+        <figure class="tile"><img src="images/gallery/tongue_out.jpeg" alt="Playful photo of Marley Wilde" loading="lazy"></figure>
+        <figure class="tile"><img src="images/gallery/tongue.jpeg" alt="Playful close-up of Marley Wilde" loading="lazy"></figure>
       </div>
     </div>
   </section>
@@ -348,7 +357,7 @@
 
   <section class="block" id="about">
     <div class="wrap about">
-      </<div class="portrait"><img src="images/black_shirt.jpg" alt="Marley Wilde in a black top" loading="lazy"></div>
+      <div class="portrait"><img src="images/gallery/theatrical-headshot.jpg" alt="Marley Wilde headshot" loading="lazy"></div>
       <div class="about-text">
         <div class="sec-head" style="margin-bottom:24px"><h2>About</h2></div>
         <p>Write two or three short paragraphs here. Open with where you're based and what you do: acting, hosting, modeling. Mention your training, a standout credit or two, and the kind of work you want to book next.</p>
