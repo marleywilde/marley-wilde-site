@@ -3,7 +3,7 @@
   :root {
     --bg: #ffffff;
     --ink: #111214;
-    --muted: #5d6166;
+video    --muted: #5d6166;
     --line: #e6e8ea;
     --soft: #f4f6f7;
     --sky: #cfe9f7;
@@ -232,12 +232,17 @@
     .gallery { gap: 8px; }
   }
 
-  /* Gallery photos loaded from gallery.json */
-  .tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-  .tile.has-photo::before { display: none; }
-  .tile.has-photo span { background: #ffffffd9; padding: 4px 8px; }
-  .tile.has-photo span:empty { display: none; }
+/* Gallery photos */
+.tile { margin: 0; }
+.tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.tile:has(img)::before { display: none; }
+.tile span { position: relative; background: #ffffffd9; padding: 4px 8px; }
 
 /* About portrait photo */
 .portrait { position: relative; overflow: hidden; padding: 0; }
 .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 30%; }
+/* Gallery photos */
+.tile { position: relative; overflow: hidden; margin: 0; }
+.tile::before { z-index: 0; }
+.tile:has(img)::before { display: none; }
+.tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; z-index: 1; }
