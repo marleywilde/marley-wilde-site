@@ -186,6 +186,9 @@
   .portrait { aspect-ratio: 3 / 4; max-width: 100%; background: linear-gradient(170deg, #eef2f4, #cdd8de); display: flex; align-items: flex-end; padding: 14px; }
   .portrait span { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 400; }
   .about-text p { max-width: 62ch; margin: 0 0 18px; font-size: 18px; }
+  .about-text h3 { margin: 26px 0 4px; line-height: 1.3; }
+  .about-text .sec-head + h3 { margin-top: 0; }
+  .about-text ul { margin: 0 0 18px; padding-left: 20px; }
   .stats { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 12px 44px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); }
   .stats dt { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 400; }
   .stats dd { margin: 2px 0 0; font-size: 17px; font-variant-numeric: tabular-nums; }
@@ -235,8 +238,8 @@
     .sub { position: static; box-shadow: none; border: 0; border-left: 1px solid #d9cdb6; margin: 6px 0 0 4px; padding: 0; min-width: 0; }
     .sub a { padding: 7px 14px; }
     .gallery { grid-template-columns: repeat(2, 1fr); }
-    .about, .contact { grid-template-columns: 1fr; }
-    .portrait { max-width: 420px; }
+    .contact { grid-template-columns: 1fr; }
+    .about { grid-template-columns: 2fr 3fr; gap: 28px; }
   }
   @media (max-width: 600px) {
     .videos { grid-template-columns: 1fr; }
@@ -245,6 +248,8 @@
     .stats { grid-template-columns: repeat(3, 1fr); gap: 12px 20px; }
     .hero { aspect-ratio: 4 / 5; }
     .gallery { gap: 8px; }
+    .about { grid-template-columns: 1fr; }
+    .portrait { max-width: 420px; }
   }
 
   /* Gallery + portrait photos (replace placeholder gradients) */
@@ -331,7 +336,7 @@
 
   <section class="block" id="photo">
     <div class="wrap">
-      <div class="sec-head"><h2>Photo</h2><span class="eyebrow">Headshots · Editorial · Commercial</span></div>
+      <div class="sec-head"><h2>Photos</h2><span class="eyebrow"></span></div>
       <div class="gallery">
         <figure class="tile"><img src="images/gallery/black_shirt.jpeg" alt="Marley Wilde in a black shirt" loading="lazy"></figure>
         <figure class="tile"><img src="images/gallery/butt_mirror.jpeg" alt="Mirror photo of Marley Wilde" loading="lazy"></figure>
@@ -348,7 +353,8 @@
 
   <section class="block" id="video">
     <div class="wrap">
-     <div class="videos" style="grid-template-columns: 1fr; max-width: 800px;">
+     <div class="sec-head"><h2>Reels</h2><span class="eyebrow"></span></div>
+    <div class="videos" style="grid-template-columns: 1fr; max-width: 800px;">
   <figure class="video" style="margin: 0;">
     <div class="frame" style="overflow: hidden;">
       <img src="images/output.gif" alt="Clip of Marley Wilde" width="480" height="360" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -395,7 +401,7 @@
         <h3>Meet Marley…</h3>
         <p>Mysterious, intense and dangerously irresistible. Your beautiful, all-natural, stunning half Latina with captivating brown eyes boasting shoulder-length, honey-blonde hair. A goddess in the bedroom, I know exactly how to move to make you lose control. With my physical attributes and my insatiable sexual appetite, I’m the total package, baby. If you’ve been craving a genuinely passionate connection… you just found your new addiction.</p>
 
-        <h3>🍑 About Me 🍑</h3>
+        <h3>About Me…</h3>
         <ul>
           <li>Standing at 5′8″ with long, toned legs that go on for miles</li>
           <li>My skin is a gorgeous olive complexion, smooth and supple to the touch</li>
@@ -419,11 +425,9 @@
       <div>
         <div class="sec-head" style="margin-bottom:28px"><h2>Contact</h2></div>
         <dl class="reps">
-          <div class="rep"><dt>Email</dt><dd>marleymoney593@gmail.com</dd></div>
-          <div class="rep"><dt>Phone</dt><dd><a href="tel:+12069902009">206-990-2009</a></dd></div>
-          <div class="rep"><dt>Theatrical agent</dt><dd>Agency name · agent@agency.com</dd></div>
-          <div class="rep"><dt>Commercial & print</dt><dd>Agency name · booking@agency.com</dd></div>
-          <div class="rep"><dt>Management</dt><dd>Manager name · manager@company.com</dd></div>
+          <div class="rep"><dt>Email</dt><dd>admin@wildemedia.net</dd></div>
+          <div class="rep"><dt>Phone</dt><dd><a href="tel:+13607248154">360-724-8154</a></dd></div>
+          <div class="rep"><dt>Agency</dt><dd>Wilde Media & Consulting &bull; www.wildemedia.net</dd></div>
         </dl>
       </div>
       <form id="contactForm" novalidate>
