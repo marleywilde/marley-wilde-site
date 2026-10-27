@@ -258,9 +258,50 @@
   .tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
   .portrait { position: relative; overflow: hidden; padding: 0; }
   .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 30%; }
+
+  /* Age gate */
+  .age-gate { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 16px; background: rgba(17, 18, 20, 0.92); }
+  .age-gate[hidden] { display: none; }
+  .age-gate .box { background: #fff9ee; max-width: 440px; width: 100%; padding: 40px 32px; text-align: center; }
+  .age-gate .mark { width: 96px; height: auto; margin: 0 auto 20px; display: block; }
+  .age-gate h2 { font-family: "Bodoni Moda", Georgia, serif; font-weight: 400; font-size: 30px; margin: 0 0 14px; }
+  .age-gate p { margin: 0 0 26px; font-size: 16px; color: var(--muted); }
+  .age-gate .ctas { justify-content: center; margin: 0; }
+  .age-gate button.btn { cursor: pointer; background: transparent; }
+  .age-gate button.btn.dark { background: var(--ink); }
+  body.gated { overflow: hidden; }
 </style>
 </head>
 <body>
+<div class="age-gate" id="ageGate" role="dialog" aria-modal="true" aria-labelledby="ageGateTitle">
+  <div class="box">
+    <img class="mark" src="images/logo.png" alt="" width="327" height="233">
+    <h2 id="ageGateTitle">Adults only</h2>
+    <p>This site contains adult content. You must be 18 or older to enter.</p>
+    <div class="ctas">
+      <button class="btn dark" type="button" id="ageYes">I'm 18 or older</button>
+      <button class="btn" type="button" id="ageNo">Leave</button>
+    </div>
+  </div>
+</div>
+<script>
+  (function () {
+    const gate = document.getElementById('ageGate');
+    let ok = false;
+    try { ok = localStorage.getItem('ageConfirmed') === 'yes'; } catch (e) {}
+    if (ok) { gate.hidden = true; return; }
+    document.body.classList.add('gated');
+    document.getElementById('ageYes').focus();
+    document.getElementById('ageYes').addEventListener('click', () => {
+      try { localStorage.setItem('ageConfirmed', 'yes'); } catch (e) {}
+      gate.hidden = true;
+      document.body.classList.remove('gated');
+    });
+    document.getElementById('ageNo').addEventListener('click', () => {
+      location.href = 'https://www.google.com';
+    });
+  })();
+</script>
 <header class="site">
   <div class="bar">
     <a class="logo" href="#home" aria-label="Marley Wilde, home">
